@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 login-block pt-5 pb-5">
+            <h2>Please enter your name </h2>
+            <input type="text"
+                   id="username"
+                   ng-model="vm.username"
+                   class="form-control mt-5"
+                   ng-keydown="vm.validate($event)">
+            <button class="col-md-12 btn btn-primary mt-5"
+                    ng-click="vm.signIn()" ng-disabled="vm.username.length === 0">
+                Start chat
+            </button>
+        </div>
+    </div>
+</div>
+

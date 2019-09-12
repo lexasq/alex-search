@@ -1,0 +1,23 @@
+html, body {
+  background-color: var(--gray-dark);
+}
+
+.chat-block, .login-block {
+  background-color: var(--light);
+  margin-top: 100px;
+}
+.login-block {
+  border-radius: 20px;
+}
+.messages {
+  max-height: 500px;
+  height: 500px;
+  overflow: auto;
+}
+.message {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.initial {
+  margin-top: 420px;
+}

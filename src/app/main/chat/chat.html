@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row chat-block">
+        <div class="col-md-12">
+            <div class="container messages" id="messages">
+                <div class="row message" ng-repeat="message in vm.messages track by $index">
+                    <div class="col-md-10" ng-class="{'offset-md-2' : message.internal}">
+                        <div ng-if="message.internal">
+                            <div>
+                                <b>
+                                    {{ message.username }}
+                                </b>
+                            </div>
+                            {{ message.question }}
+                        </div>
+                        <div ng-if="!message.internal">
+                            <div>
+                                <b>
+                                    Bot
+                                </b>
+                            </div>
+                            {{ message.title }}
+                            <br>
+                            <a ng-href="{{ message.link }}">
+                                {{ message.link }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message initial" ng-if="!vm.messages || (vm.messages.length === 0)">
+                    <div class="col-md-10">
+                        <div>
+                            <b>
+                                Bot
+                            </b>
+                        </div>
+                        Please ask me anything
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-10">
+                    <textarea  class="col-md-12"
+                               ng-keypress="vm.checkEnter($event)"
+                               ng-model="vm.question">
+
+                    </textarea>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" ng-click="vm.askQuestion()">
+                        Send
+                    </button>
+                    <button type="button" class="btn btn-danger" ng-click="vm.leaveChat()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
